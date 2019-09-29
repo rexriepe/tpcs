@@ -3,19 +3,16 @@
 
 // variables
 
-@base-color: #B8D8E0;
+//@base-color: #B8D8E0;
 
 // run TPCS and set all 9 semantic color variables:
 // action, reaction, alternate, accent, highlight, info, warning, success, failure
 
-.set-color-scheme(@base-color);
+// .set-color-scheme(@base-color);
 
-// TPCS mixins
 
+// main scheme mixin
 .set-color-scheme(@color: @base-color) {
-	// the main mixin 
-	// sets all color variables
-
 	.set-rep-color(@color, @turbo);
 	.set-color-bases(@rep-color, @rep-color-number);
 	.set-action();
@@ -30,6 +27,7 @@
 }
 
 .set-rep-color(@color, @list) {
+
 	// this sets a representative color -- @rep-color -- out of a @list 
 	// @rep-color is the color in the list closest to the given @color
 	// right now this measures by hue
@@ -125,7 +123,6 @@
 .set-action() {
 	// action means "do something," it's great for submit buttons
 	// it's usually pretty close to the base color 
-
 	.set-lumafix(@action-base, @base-color, 38%);
 	@action: @lumafix;
 }
@@ -134,7 +131,6 @@
 	// reaction is for responding, usually after an action
 	// a good second step or confirmation color 
 	// reaction is typically close to being a complement of action 
-
 	.set-lumafix(@reaction-base, @base-color, 38%);
 	@reaction: @lumafix;
 }
@@ -142,7 +138,6 @@
 .set-alternate() {
 	// alternate is meant to be an alternate color to action and reaction
 	// it can sometimes make a good stand-in for other colors in the scheme 
-
 	.set-alternate-final() {
 		.set-lumafix(@alt-base, @base-color, 38%);
 		@alternate: @lumafix;
@@ -363,7 +358,6 @@
 .set-accent() {
 	// accent is meant to be used sparingly with @action, @reaction and @alternate 
 	// its extra saturation and lightness is good for drawing attention or balancing designs
-
 	.set-accent-final() {
 		.set-lumafix(@accent-base);
 		@accent:lighten(saturate(mix(@lumafix, @accent-base, 20%), 10%), 5%);
@@ -418,6 +412,7 @@
 }
 
 .invert-text-against(@color; @contrast-standard: 7; @button: false;) {
+
 	// always results in white text
 	// darkens given background when needed to meet contrast standard
 

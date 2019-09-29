@@ -1,0 +1,27 @@
+// basics
+@base-font-size: 16px; // in px
+
+// css attribute defaults
+@padding: .5em;
+@margin: 1rem;
+@max-width: 36rem;
+@line-height: 1.8;
+@border-radius: .4em;
+@background: white;
+@font-size: @base-font-size;
+
+// nav settings
+@nav-height: 2.8rem;
+@sticky-nav: true;
+
+// layout settings
+@page-width: @margin + @column-width + @margin;
+@gutter: @margin*2;
+@column-width: @max-width;
+@aside-width: floor(@column-width*.6);
+
+// breakpoints (used in targets.less)
+@large-phone:   (unit(@aside-width + @margin/2) * @base-font-size);
+@tablet:        (unit(@page-width + @margin) * @base-font-size);
+@desktop:       (unit(@page-width) * @base-font-size);
+@large-desktop: (unit(@page-width + @aside-width + @gutter) * @base-font-size);

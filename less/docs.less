@@ -1,0 +1,346 @@
+
+#turbo {
+	clear: both;
+	p {
+		// border: 1px solid black;
+		display: block;
+		width: 99%/255;
+		height: 32px;
+		line-height: 32px;
+		margin: 0;
+		float: left;
+
+	}
+}
+
+@gray-darker: #333;
+
+code, pre {
+  .invert-text-against(mix(@gray-darker, @background, 40%));
+  font-family: monospace;
+  border-radius: @border-radius/2;
+}
+
+code {
+  font-size: 85%;
+  padding: .25em @padding .25em @padding;
+  position: relative;
+  top: -.1em;
+}
+
+pre {
+  .max-width();
+  .margin-bottom();
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  padding: @padding;
+}
+
+hr {
+  margin: @margin*2 0;
+  background: skyblue;
+  border-color: transparent;
+  height: @padding;
+  width: 100%;
+}
+
+
+table {
+
+	width: 100%;
+
+	text-align: right;
+
+	@color-width: 64px;
+
+	td:nth-child(even) {
+		min-width: 25%;
+	}
+
+	td:nth-child(even) {
+		min-width: @color-width;
+	}
+
+
+	span {
+		display: inline-block;
+		border-radius: 4px;
+		min-width: @color-width;
+		height: 24px;
+		margin: @padding/2 @padding;
+	}
+}
+
+ul {
+	//width: 120px;
+	clear: both;
+}
+
+li {
+	border-radius: 8px;
+	@height: 34px;
+	float:left;
+	width: 100px;
+	height: @height;
+	line-height: @height - 4;
+	list-style-type: none;
+	margin-bottom: 16px;
+	margin-right: 16px;
+	padding: 16px;
+}
+
+
+.no-user-select() {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.hide() {
+  &:extend(.hide);
+}
+
+.clearfix() {
+  &:extend(.clearfix all);
+}
+
+.max-width() {
+  &:extend(.max-width);
+}
+
+.margin-bottom() {
+  &:extend(.margin-bottom);
+}
+
+// utility classes
+// these have corresponding mixins
+
+.hide, .hidden { display: none !important;}
+
+.max-width { max-width: @max-width;}
+
+.margin-bottom { margin-bottom: @margin;}
+
+.border-radius { border-radius: @border-radius;}
+
+.clearfix {
+  clear: both;
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+.padding {
+  padding: @padding;
+}
+
+@example1: lightgreen;
+@example2: skyblue;
+@example3: tomato;
+@example4: royalblue;
+@example5: greenyellow;
+@example6: crimson;
+@example7: lemonchiffon;
+@example8: navy;
+@example9: peachpuff;
+@example10: aqua;
+@example11: lightskyblue;
+
+.example1 {
+	@base-color: @example1;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+
+.example2 {
+	@base-color: @example2;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example3 {
+	@base-color: @example3;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example4 {
+	@base-color: @example4;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example5 {
+	@base-color: @example5;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example6 {
+	@base-color: @example6;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example7 {
+	@base-color: @example7;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example8 {
+	@base-color: @example8;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example9 {
+	@base-color: @example9;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example10 {
+	@base-color: @example10;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+.example11 {
+	@base-color: @example11;
+	.set-color-scheme(@base-color);
+	.base-color { .colorize(@base-color);}
+	.action { .colorize(@action);}
+	.reaction { .colorize(@reaction);}
+	.warning { .colorize(@warning);}
+	.info { .colorize(@info);}
+	.success { .colorize(@success);}
+	.failure { .colorize(@failure);}
+	.accent { .colorize(@accent);}
+	.alternate { .colorize(@alternate);}
+	.highlight { .colorize(@highlight);}
+}
+
+
+#turbo {
+	each(@turbo, {
+		p:nth-child(@{index}) {
+			background: @value;
+		}
+	});
+}
+
+.colorize(@color) {
+	@width: 12px;
+	//border-right: @width solid hardlight(@color, #555);
+    //border-bottom: @width solid hardlight(@color, #444);
+    //border-left: @width solid softlight(@color, white);
+
+    //@border-top-color: overlay(@color, white);
+
+    //.set-border-top() when (luma(@border-top-color) > 98%) {
+    //	border-top: @width solid mix(@border-top-color, softlight(@color, white), 50%);
+    //}
+
+    //.set-border-top() when (default()) {
+    //	border-top: @width solid @border-top-color;
+    //}
+
+    //.set-border-top();
+
+    //box-shadow: 0 0 @width mix(@border-top-color, softlight(@color, white), 25%);
+}

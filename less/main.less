@@ -1,0 +1,34 @@
+main {
+  &:extend(section all);
+  .margin-bottom();
+  min-height: 62vh;
+
+  .colorize(skyblue);
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: left;
+  align-items: left;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  font-size: 112.5%;
+
+  * {
+    max-width: none;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  > * {
+    max-width: @page-width;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,31 @@
+.button-elements({
+  display: inline-block;
+  font-size: 112.5%;
+  text-align: center;
+  vertical-align: middle;
+  min-height: 32px;
+  line-height: @line-height;
+  padding: 0.4em .8em;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  .border-radius();
+  outline: none;
+  white-space: nowrap;
+  text-decoration: none;
+  .button-color(#71d0f3);
+  .no-user-select();
+});
+
+.button-elements(@rules) {
+  button,
+  .button,
+  input[type="button"],
+  input[type="submit"] { @rules();}
+}
+
+.button-color(@color) when (default()) {
+  @this-color: #71d0f3;
+  .invert-text-against(@this-color; @contrast-standard: 3; @button: true;);
+}
